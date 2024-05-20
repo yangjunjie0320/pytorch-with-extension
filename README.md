@@ -13,3 +13,7 @@ cd CxxExtension; pip install .; cd ..;
 
 python main.py
 ```
+
+## Reference
+- [PyTorch C++ Frontend Tutorial](https://pytorch.org/tutorials/advanced/cpp_frontend.html)
+- [PyTorch CUDA Extension Tutorial](https://pytorch.org/tutorials/advanced/cpp_extension.html)
