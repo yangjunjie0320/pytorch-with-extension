@@ -1,4 +1,4 @@
-name: myenv
+name: pytorch-with-cxx-and-cuda-extension
 channels:
   - conda-forge
   - pytorch

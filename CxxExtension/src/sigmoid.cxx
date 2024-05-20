@@ -1,4 +1,5 @@
 // ./CxxExtension/src/sigmoid.cxx
+#include <iostream> // Include the iostream library
 #include "sigmoid.h" // Include the header file
 
 // Define the forward function
@@ -7,8 +8,7 @@ at::Tensor sigmoid_forward(const at::Tensor& x) {
 
     for (auto i = 0; i < x.size(0); i++) {
         for (auto j = 0; j < x.size(1); j++) {
-            auto expx = at::exp(-x[i][j]);
-            y[i][j] = expx / (1.0 + expx);
+            y[i][j] = at::exp(-x[i][j]) / (1.0 + at::exp(-x[i][j]));
         }
     }
 

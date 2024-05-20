@@ -2,8 +2,9 @@
 
 ## Build
 ```bash
-conda create -n pytorch-with-extension -f requirements.txt -c pytorch
-conda activate pytorch-with-extension
+# create a new conda environment and activate it
+conda env create -f environment.yml 
+conda activate $(grep 'name:' environment.yml | awk '{print $2}')
 
 # Build C++ extension
 cd CxxExtension; pip install .; cd ..;
