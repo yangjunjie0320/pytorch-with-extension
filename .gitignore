@@ -1,0 +1,66 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# C++ build artifacts
+CxxExtension/build/
+CxxExtension/*.so
+*.o
+*.out
+*.exe
+*.dll
+*.obj
+*.lib
+*.a
+*.pch
+*.gch
+*.slo
+*.lo
+*.ii
+*.i
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*~
+
+# Logs and databases
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Profiling and performance data
+.prof
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Typing cache
+.mypy_cache/
+.pytype/
+.pyre/

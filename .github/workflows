@@ -1,0 +1,41 @@
+name: pytorch with c++ and cuda extension
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+        pip install flake8
+        pip install -r requirements.txt
+        
+    - name: Build and Install C++ Extension
+      run: |
+        cd CxxExtension
+        python setup.py install
+        
+    - name: Run style check
+      run: |
+        flake8 main.py --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 main.py --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Run main.py
+      run: |
+        python main.py
