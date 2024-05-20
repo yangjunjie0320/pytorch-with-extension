@@ -1,0 +1,13 @@
+name: myenv
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - setuptools
+  - pybind11
+  - numpy
+  - scipy
+  - pytorch
+  - torchvision  # Assuming you might need torchvision as well
+  - cudatoolkit=11.3  # Specify CUDA toolkit version if GPU support is needed

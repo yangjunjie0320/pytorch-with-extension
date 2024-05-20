@@ -1,6 +1,0 @@
-setuptools
-pybind11
-
-numpy
-scipy
-pytorch
