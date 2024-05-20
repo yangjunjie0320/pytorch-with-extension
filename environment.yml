@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - pytorch
 dependencies:
+  - python=3.10
   - setuptools
   - pybind11
   - numpy
