@@ -1,4 +1,4 @@
-# pytorch-with-extension
+# PyTorch With C++ and CUDA Extensions
 
 ## Build the C++ Extension
 Currently, PyTorch has implemented many functions. However, in some scenarios, it is still necessary to use C++ or CUDA to customize some operations. These scenarios mainly include the following two types: (a) operations not yet supported by PyTorch; and (b) implementations in PyTorch are not efficient.
