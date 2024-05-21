@@ -7,12 +7,10 @@ conda env create -f environment.yml
 conda activate $(grep 'name:' environment.yml | awk '{print $2}')
 
 # Build C++ extension
-cd CxxExtension; pip install .; cd ..;
+cd CxxExtension; pip install .; python main.py; cd ..;
 
 # Build CUDA extension
 # TODO
-
-python main.py
 ```
 
 ## Reference
