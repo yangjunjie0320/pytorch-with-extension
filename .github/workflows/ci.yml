@@ -17,14 +17,14 @@ jobs:
     - name: Set up Python 3.10
       uses: conda-incubator/setup-miniconda@v2
       with:
-        python-version: "3.10"
-        auto-activate-base: true
+        activate-environment: test
+        environment-file: environment.yml
+        auto-activate-base: false
         
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
         conda install flake8
-        conda install --file environment.yml 
-
+    
     - name: Conda Environment Info
       run: conda info
   
