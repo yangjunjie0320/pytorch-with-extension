@@ -2,6 +2,8 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 
+#include "sigmoid.h"
+
 #define THREADS_PER_BLOCK 1024
 
 template <typename scalar_t>

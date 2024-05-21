@@ -1,7 +1,8 @@
-name: pytorch-with-cxx-and-cuda-extension
+name: pytorch-with-cxx-extension
 channels:
-  - conda-forge
   - pytorch
+  - defaults
+  - conda-forge
 dependencies:
   - python=3.10
   - setuptools
@@ -9,3 +10,5 @@ dependencies:
   - numpy
   - scipy
   - pytorch
+
+

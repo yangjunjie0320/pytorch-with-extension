@@ -27,8 +27,8 @@ jobs:
     - name: Set up Python 3.10
       uses: conda-incubator/setup-miniconda@v2
       with:
-        activate-environment: pytorch-with-cxx-and-cuda-extension
-        environment-file: environment.yml
+        activate-environment: pytorch-with-cxx-extension
+        environment-file: CxxExtension/environment.yml
         auto-activate-base: false
         
     - name: Install Dependencies

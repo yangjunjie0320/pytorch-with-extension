@@ -21,8 +21,10 @@ extension = CUDAExtension(
     include_dirs=[join(path, "include")],
 )
 
+cmdclass = {"build_ext": BuildExtension}
+
 setup(
     name=name, version="0.1",
     ext_modules=[extension],
-    cmdclass={"build_ext": BuildExtension},
+    cmdclass=cmdclass,
 )
