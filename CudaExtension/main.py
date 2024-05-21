@@ -3,18 +3,17 @@ from torch.nn import Module
 from torch.autograd import Function
 
 def sigmoid_cxx_extension(x):
-    import sigmoid_with_cxx_extension as sigmoid
-
+    import mysigmoid
     class SigmoidFunction(Function):
         @staticmethod
         def forward(ctx, x):
-            y = sigmoid.forward(x)
+            y = mysigmoid.forward(x)
             ctx.save_for_backward(y)
             return y
 
         @staticmethod
         def backward(ctx, grad_output):
-            g = sigmoid.backward(*ctx.saved_tensors, grad_output)
+            g = mysigmoid.backward(*ctx.saved_tensors, grad_output)
             return g
 
     class Sigmoid(Module):

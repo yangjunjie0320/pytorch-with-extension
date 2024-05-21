@@ -6,9 +6,9 @@ from os.path import join, dirname, abspath
 from setuptools import setup
 
 from torch.utils.cpp_extension import BuildExtension
-from torch.utils.cpp_extension import CppExtension
+from torch.utils.cpp_extension import CUDAExtension
 
-name = "sigmoid_with_cxx_extension"
+name = "sigmoid_with_cuda_extension"
 path = dirname(abspath(__file__))
 
 is_source_file = lambda s: s.endswith(".cxx") or s.endswith(".cu")
@@ -16,7 +16,7 @@ sources = (lambda d: [join(d, s) for s in listdir(d) if is_source_file(s)])(
     join(path, "src")
 )
 
-extension = CppExtension(
+extension = CUDAExtension(
     name, sources=sources,
     include_dirs=[join(path, "include")],
 )
