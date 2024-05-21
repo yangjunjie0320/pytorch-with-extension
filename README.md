@@ -1,18 +1,17 @@
 # pytorch-with-extension
 
 ## Build the C++ Extension
-```bash
-# create a new conda environment and activate it
-conda env create -f environment.yml 
-conda activate $(grep 'name:' environment.yml | awk '{print $2}')
+Currently, PyTorch has implemented many functions. However, in some scenarios, it is still necessary to use C++ or CUDA to customize some operations. These scenarios mainly include the following two types: (a) operations not yet supported by PyTorch; and (b) implementations in PyTorch are not efficient.
 
-# Build C++ extension
-cd CxxExtension; pip install .; python main.py; cd ..;
+For these scenarios, specific functionalities can be achieved by writing C++ or CUDA extensions, thus achieving higher computational efficiency and accelerating the training of the network.
+
+Compared to Python, C/C++ has inherent advantages in terms of low overhead. Therefore, for some complex operations, these can be implemented in C/C++ and then called through Python. Additionally, when implementing C++ extensions, users can customize the backward propagation functions instead of using PyTorch's autograd to automatically generate them, which is more efficient.
+```bash
+cd CxxExtension; conda env create -f environment.yml
+conda activate $(grep 'name:' environment.yml | awk '{print $2}')
+pip install .; python main.py; cd ..;
 ```
 
-Absolutely! Here’s an updated version of the guide with the requested adjustments, including emphasis on using Conda for PyTorch installation but not for `nvcc`.
-
----
 
 ## Build the CUDA Extension
 
