@@ -1,11 +1,9 @@
 import torch
 from torch.autograd import Function
 from torch.nn import Module
-import mysigmoid2  # 导入我们的扩展
+import mysigmoid2
 import time
 
-
-# 将扩展的前向传播和反向传播封装为一个Function对象
 class MySigmoid(Function):
     @staticmethod
     def forward(ctx, x):
@@ -43,7 +41,6 @@ def main():
 
 
 def compare_pytorch_with_cuda():
-    # 调用model时必须保证是二维数据
     x1 = torch.randn((1280, 1280)).cuda().requires_grad_()
     model = Test().cuda()
     starttime = time.time()
