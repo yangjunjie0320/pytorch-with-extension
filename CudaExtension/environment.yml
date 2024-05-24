@@ -1,0 +1,14 @@
+name: pytorch-with-cxx-extension
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - setuptools
+  - pybind11
+  - numpy
+  - scipy
+  - pytorch
+
+
