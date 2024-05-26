@@ -10,5 +10,5 @@ dependencies:
   - numpy
   - scipy
   - pytorch
-
-
+  - torchvision
+  - cudatoolkit=11.1
